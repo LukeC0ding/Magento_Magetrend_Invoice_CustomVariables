@@ -6,7 +6,7 @@
                 <columns>
                     <singlepricewithouttax>
                         <label>Nettopreis</label>
-                        <renderer>Magetrend\PdfCustom\Model\Renderer\SinglePriceWithoutTax</renderer>
+                        <renderer>LauserMedia\CustomPrice\Model\Renderer\SinglePriceWithoutTax</renderer>
                         <sort_order>23</sort_order>
                         <default>
                             <item_1>Default</item_1>
@@ -24,7 +24,7 @@
                     </singlepricewithouttax>
                     <totalwithouttax>
                         <label>Total (Netto)</label>
-                        <renderer>Magetrend\PdfCustom\Model\Renderer\TotalPriceWithoutTax</renderer>
+                        <renderer>LauserMedia\CustomPrice\Model\Renderer\TotalPriceWithoutTax</renderer>
                         <sort_order>99</sort_order>
                         <default>
                             <item_1>Default</item_1>
