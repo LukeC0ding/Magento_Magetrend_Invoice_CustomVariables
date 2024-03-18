@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <pdftemplates>
+            <items>
+                <columns>
+                    <author>
+                        <label>Author</label>
+                        <renderer>Magetrend\PdfCustom\Model\Renderer\Author</renderer>
+                        <sort_order>23</sort_order>
+                        <default>
+                            <item_1>S. Jons</item_1>
+                            <item_2>P. Geret</item_2>
+                            <item_3>A. Malone</item_3>
+                            <item_4>D. Geret</item_4>
+                            <item_5>J. Jons</item_5>
+                        </default>
+                        <is_active>
+                            <order>1</order>
+                            <invoice>1</invoice>
+                            <creditmemo>1</creditmemo>
+                            <shipment>1</shipment>
+                        </is_active>
+                    </author>
+                </columns>
+            </items>
+        </pdftemplates>
+    </default>
+</config>
