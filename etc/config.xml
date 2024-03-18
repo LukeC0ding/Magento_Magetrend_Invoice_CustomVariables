@@ -4,16 +4,11 @@
         <pdftemplates>
             <items>
                 <columns>
-                    <author>
-                        <label>Author</label>
-                        <renderer>Magetrend\PdfCustom\Model\Renderer\Author</renderer>
+                    <singlepricewithouttax>
+                        <label>Nettopreis</label>
+                        <renderer>Magetrend\PdfCustom\Model\Renderer\SinglePriceWithoutTax</renderer>
                         <sort_order>23</sort_order>
                         <default>
-                            <item_1>S. Jons</item_1>
-                            <item_2>P. Geret</item_2>
-                            <item_3>A. Malone</item_3>
-                            <item_4>D. Geret</item_4>
-                            <item_5>J. Jons</item_5>
                         </default>
                         <is_active>
                             <order>1</order>
@@ -21,7 +16,20 @@
                             <creditmemo>1</creditmemo>
                             <shipment>1</shipment>
                         </is_active>
-                    </author>
+                    </singlepricewithouttax>
+                    <totalwithouttax>
+                        <label>Total (Netto)</label>
+                        <renderer>Magetrend\PdfCustom\Model\Renderer\TotalPriceWithoutTax</renderer>
+                        <sort_order>99</sort_order>
+                        <default>
+                        </default>
+                        <is_active>
+                            <order>1</order>
+                            <invoice>1</invoice>
+                            <creditmemo>1</creditmemo>
+                            <shipment>1</shipment>
+                        </is_active>
+                    </totalwithouttax>
                 </columns>
             </items>
         </pdftemplates>
