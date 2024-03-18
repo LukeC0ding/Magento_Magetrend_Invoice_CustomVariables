@@ -9,6 +9,11 @@
                         <renderer>Magetrend\PdfCustom\Model\Renderer\SinglePriceWithoutTax</renderer>
                         <sort_order>23</sort_order>
                         <default>
+                            <item_1>Default</item_1>
+                            <item_2>Default</item_2>
+                            <item_3>Default</item_3>
+                            <item_4>Default</item_4>
+                            <item_5>Default</item_5>
                         </default>
                         <is_active>
                             <order>1</order>
@@ -22,6 +27,11 @@
                         <renderer>Magetrend\PdfCustom\Model\Renderer\TotalPriceWithoutTax</renderer>
                         <sort_order>99</sort_order>
                         <default>
+                            <item_1>Default</item_1>
+                            <item_2>Default</item_2>
+                            <item_3>Default</item_3>
+                            <item_4>Default</item_4>
+                            <item_5>Default</item_5>
                         </default>
                         <is_active>
                             <order>1</order>
