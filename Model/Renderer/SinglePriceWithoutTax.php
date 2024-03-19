@@ -15,8 +15,8 @@ class SinglePriceWithoutTax extends \Magetrend\PdfTemplates\Model\Pdf\Element\It
         \Magetrend\PdfTemplates\Model\Pdf\Decorator $decorator,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
-        array $data = [],
-        \Magento\Tax\Helper\Data $taxHelper
+        \Magento\Tax\Helper\Data $taxHelper,
+        array $data = []
     ) {
         $this->taxHelper = $taxHelper;
         $this->productRepository = $productRepository;
