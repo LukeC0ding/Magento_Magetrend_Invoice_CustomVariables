@@ -21,11 +21,7 @@ class TotalPriceWithoutTax extends \Magetrend\PdfTemplates\Model\Pdf\Element\Ite
     public function getRowValue(): string
     {
         $item = $this->getItem();
-        try {
-            $product = $this->productRepository->getById($item->getProductId());
-        } catch (NoSuchEntityException $e) {
-            return '';
-        }
+        $order = $this->getOrder();
 
         if ($item instanceof \Magento\Sales\Model\Order\Item) {
             $qty = $item->getQtyOrdered();
@@ -33,9 +29,10 @@ class TotalPriceWithoutTax extends \Magetrend\PdfTemplates\Model\Pdf\Element\Ite
             $qty = $item->getQty();
         }
 
-        $netPrice = $product->getPrice() - $item->getTaxAmount();
-        $netTotal = $netPrice * $qty;
+        $priceForDisplay = $this->getItemRenderer()->getItemPricesForDisplay();
 
-        return number_format($netTotal, 2, '.', '') . ' €';
+        $netPrice = $priceForDisplay[0]['subtotal'] - $item->getTaxAmount();
+
+        return $order->formatPriceTxt($netPrice);
     }
 }

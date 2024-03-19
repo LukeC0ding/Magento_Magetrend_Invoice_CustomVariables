@@ -2,7 +2,7 @@
   "name": "lausermedia/custom-price",
   "description": "Bietet benutzerdefinierte Preisfunktionalitäten für Magento 2. Rechnung",
   "type": "magento2-module",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "license": "OSL-3.0",
   "require": {
     "php": "~7.3.0||~7.4.0||~8.1.0",
