@@ -30,6 +30,6 @@ class SinglePriceWithoutTax extends \Magetrend\PdfTemplates\Model\Pdf\Element\It
 
         $netPrice = $product->getPrice();
 
-        return number_format($netPrice, 2, '.', '') . ' ' . $product->getOrder()->getOrderCurrencyCode();
+        return number_format($netPrice, 2, '.', '') . ' €';
     }
 }

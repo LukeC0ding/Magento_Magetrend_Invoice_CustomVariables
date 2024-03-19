@@ -28,8 +28,8 @@ class TotalPriceWithoutTax extends \Magetrend\PdfTemplates\Model\Pdf\Element\Ite
         }
 
         $netPrice = $product->getPrice();
-        $netTotal = $netPrice * $product->getQtyOrdered();
+        $netTotal = $netPrice * $item->getQtyOrdered();
 
-        return number_format($netTotal, 2, '.', '') . ' ' . $item->getOrder()->getOrderCurrencyCode();
+        return number_format($netTotal, 2, '.', '') . ' €';
     }
 }
