@@ -20,6 +20,7 @@ class TotalPriceWithoutTax extends \Magetrend\PdfTemplates\Model\Pdf\Element\Ite
 
     public function getRowValue(): string
     {
+        $item = $this->getItem();
         try {
             $product = $this->productRepository->getById($item->getProductId());
         } catch (NoSuchEntityException $e) {
