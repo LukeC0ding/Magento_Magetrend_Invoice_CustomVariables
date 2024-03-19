@@ -34,9 +34,9 @@
                             <item_5>Default</item_5>
                         </default>
                         <is_active>
-                            <order>0</order>
-                            <invoice>0</invoice>
-                            <creditmemo>0</creditmemo>
+                            <order>1</order>
+                            <invoice>1</invoice>
+                            <creditmemo>1</creditmemo>
                             <shipment>0</shipment>
                         </is_active>
                     </totalwithouttax>
