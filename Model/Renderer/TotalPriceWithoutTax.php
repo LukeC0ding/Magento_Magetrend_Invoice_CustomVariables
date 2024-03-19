@@ -7,6 +7,7 @@ use Magento\Framework\Exception\NoSuchEntityException;
 class TotalPriceWithoutTax extends \Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column\DefaultRenderer
 {
     public $productRepository;
+    protected $taxHelper;
 
     public function __construct(
         \Magetrend\PdfTemplates\Helper\Data $moduleHelper,
@@ -14,8 +15,10 @@ class TotalPriceWithoutTax extends \Magetrend\PdfTemplates\Model\Pdf\Element\Ite
         \Magetrend\PdfTemplates\Model\Pdf\Decorator $decorator,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
-        array $data = []
+        array $data = [],
+        \Magento\Tax\Helper\Data $taxHelper
     ) {
+        $this->taxHelper = $taxHelper;
         $this->productRepository = $productRepository;
         parent::__construct($moduleHelper, $element, $decorator, $scopeConfig, $data);
     }
@@ -30,7 +33,7 @@ class TotalPriceWithoutTax extends \Magetrend\PdfTemplates\Model\Pdf\Element\Ite
 
         try {
             $product = $this->productRepository->getById($item->getProductId());
-            $netPrice = $product->getPriceInfo()->getPrice('final_price')->getAmount()->getBaseAmount();
+            $netPrice = $this->taxHelper->getPrice($product, $product->getFinalPrice(), false );
             $totalNetPrice = $netPrice * $qtyOrdered;
         } catch (NoSuchEntityException $e) {
             return '';
