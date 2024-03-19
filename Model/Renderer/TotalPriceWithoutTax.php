@@ -27,8 +27,14 @@ class TotalPriceWithoutTax extends \Magetrend\PdfTemplates\Model\Pdf\Element\Ite
             return '';
         }
 
-        $netPrice = $product->getPrice();
-        $netTotal = $netPrice * $item->getQtyOrdered();
+        if ($item instanceof \Magento\Sales\Model\Order\Item) {
+            $qty = $item->getQtyOrdered();
+        } else {
+            $qty = $item->getQty();
+        }
+
+        $netPrice = $product->getPrice() - $item->getTaxAmount();
+        $netTotal = $netPrice * $qty;
 
         return number_format($netTotal, 2, '.', '') . ' €';
     }

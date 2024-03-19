@@ -28,7 +28,7 @@ class SinglePriceWithoutTax extends \Magetrend\PdfTemplates\Model\Pdf\Element\It
             return '';
         }
 
-        $netPrice = $product->getPrice();
+        $netPrice = $product->getPrice() - $item->getTaxAmount();
 
         return number_format($netPrice, 2, '.', '') . ' €';
     }
