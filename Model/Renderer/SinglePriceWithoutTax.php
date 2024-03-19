@@ -19,7 +19,7 @@ class SinglePriceWithoutTax extends \Magetrend\PdfTemplates\Model\Pdf\Element\It
         parent::__construct($moduleHelper, $element, $decorator, $scopeConfig, $data);
     }
 
-    public function getRowValue($item = null)
+    public function getRowValue(): string
     {
         try {
             $product = $this->productRepository->getById($item->getProductId());
